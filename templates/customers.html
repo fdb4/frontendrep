@@ -1,0 +1,153 @@
+<!doctype html>
+<head><title>Customers</title> 
+<meta charset=utf-8> 
+<button> <a href="/">home</a></button>
+</head>
+
+	<button> <a href="/movies/">Movies</a></button>
+	<button> <a href="/customers/">Customers</a></button>
+	<button> <a href="/reports/">Reports</a></button>
+<br>
+
+</br>
+	<button> <a href="/custDetails/">Detailed List</a></button>
+<br>
+<div>CREATE CUSTOMER</div>
+<br>
+<form action="" method="post">
+	<input type="hidden" name="CRUD" value="1">
+	<label for="storeID" class="form-label">Store ID:</label>
+	<select name="storeID">
+		<option value=1>Store 1</option>
+		<option value=2>Store 2</option>
+	</select>
+	<br>
+	<label for="custFN" class="form-label">First Name:</label>
+	<input name="custFN" type="text"/>
+	<br>
+	<label for="custLN" class="form-label">Last Name</label>
+	<input name="custLN" type="text"/>
+	<br>
+	<label for="email" class="form-label">email</label>
+	<input name="email" type="text"/>
+	<br>
+	<label for="address" class="form-label">address</label>
+	<input name="address" type="text"/>
+	<br>
+	<label for="address2" class="form-label">address 2</label>
+	<input name="address2" type="text"/>
+	<br>
+	<label for="district" class="form-label">district</label>
+	<input name="district" type="text"/>
+	<br>
+	<label for="postal" class="form-label">postal code</label>
+	<input name="postal" type="text"/>
+	<br>
+	<label for="city" class="form-label">city</label>
+	<input name="city" type="text"/>
+	<br>
+	<label for="country" class="form-label">country:</label>
+	<select name="country">
+		{% for item in country %}
+		<option value="{{item[0]}}">{{item[0]}}</option>
+		{% endfor %}
+	</select>
+	<br>
+	<label for="phone" class="form-label">phone number</label>
+	<input name="phone" type="text"/>
+	<br>
+	<button type="submit">Create</button>
+</form>
+<br>
+<div>UPDATE CUSTOMER</div>
+<br>
+<form action="" method="post">
+	<input type="hidden" name="CRUD" value="2">
+	<label for="custID2" class="form-label">CustomerID(required):</label>
+	<input name="custID2" type="text"/>
+	<br>
+	<label for="storeID2" class="form-label">Store ID:</label>
+	<select name="storeID2">
+		<option value=1>Store 1</option>
+		<option value=2>Store 2</option>
+	</select>
+	<br>
+	<label for="custFN2" class="form-label">First Name:</label>
+	<input name="custFN2" type="text"/>
+	<br>
+	<label for="custLN2" class="form-label">Last Name</label>
+	<input name="custLN2" type="text"/>
+	<br>
+	<label for="email2" class="form-label">email</label>
+	<input name="email2" type="text"/>
+	<br>
+	<label for="address2" class="form-label">address</label>
+	<input name="address2" type="text"/>
+	<br>
+	<label for="address22" class="form-label">address 2</label>
+	<input name="address22" type="text"/>
+	<br>
+	<label for="district2" class="form-label">district</label>
+	<input name="district2" type="text"/>
+	<br>
+	<label for="postal2" class="form-label">postal code</label>
+	<input name="postal2" type="text"/>
+	<br>
+	<label for="city2" class="form-label">city</label>
+	<input name="city2" type="text"/>
+	<br>
+	<label for="country2" class="form-label">country:</label>
+	<select name="country2">
+		{% for item in country %}
+		<option value="{{item[0]}}">{{item[0]}}</option>
+		{% endfor %}
+	</select>
+	<br>
+	<label for="phone2" class="form-label">phone number</label>
+	<input name="phone2" type="text"/>
+	<br>
+	<button type="submit">Update</button>
+</form>
+<br>
+<div>DELETE CUSTOMER</div>
+<br>
+<form action="" method="post">
+	<input type="hidden" name="CRUD" value="3">
+	<label for="custID3" class="form-label">CustomerID(required):</label>
+	<input name="custID3" type="text"/>
+	<label for="addressID3" class="form-label">AddressID(required):</label>
+	<input name="addressID3" type="text"/>
+	<label for="cityID3" class="form-label">cityID(required):</label>
+	<input name="cityID3" type="text"/>
+	<br>
+	<button type="submit">Delete</button>
+</form>
+<div>LOOKUP CUSTOMER</div>
+<br>
+<br>
+<form action="" method="post">
+		<input type="hidden" name="CRUD" value="0">
+                <label for="custID" class="form-label">Search by CustomerID</label>
+                <input name="custID" type="text"/>
+   		<label for="custFN" class="form-label">Search by First Name</label>
+                <input name="custFN" type="text"/>
+                <label for="custLN" class="form-label">Search by Last Name</label>
+                <input name="custLN" type="text"/>
+                <button type="submit">Search</button>
+</form>
+<table>
+
+{% for item in data %}
+<tr>
+	<td>{{item[0]}}</td>
+	<td>{{item[1]}}</td>
+	<td>{{item[2]}}</td>
+	<td>{{item[3]}}</td>
+	<td>{{item[4]}}</td>
+	<td>{{item[5]}}</td>
+	<td>{{item[6]}}</td>
+	<td>{{item[7]}}</td>
+	<td>{{item[8]}}</td>
+</tr>
+{% endfor %}
+</table>

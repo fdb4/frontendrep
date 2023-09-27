@@ -11,3 +11,4 @@ python -m pip install flask
 python -m pip install six
 5.run the healthcheckscript.py
 6.the website url should be displayed type it in a browser and itll work.
+for reference look at the images folder

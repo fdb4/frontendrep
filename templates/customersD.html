@@ -1,0 +1,54 @@
+<!doctype html>
+<head><title>Customers</title> 
+<meta charset=utf-8> 
+<button> <a href="/">home</a></button>
+</head>
+
+	<button> <a href="/movies/">Movies</a></button>
+	<button> <a href="/customers/">Customers</a></button>
+	<button> <a href="/reports/">Reports</a></button>
+<br>
+<form action="" method="post">
+                <label for="custID" class="form-label">Search by CustomerID</label>
+                <input name="custID" type="text"/>
+   		<label for="custFN" class="form-label">Search by First Name</label>
+                <input name="custFN" type="text"/>
+                <label for="custLN" class="form-label">Search by Last Name</label>
+                <input name="custLN" type="text"/>
+                <button type="submit">Search</button>
+            </form>
+</br>
+<table>
+<tr>
+	<th>CustomerID</th>
+	<th>AddressID</th>
+	<th>CityID</th>
+	<th>FirstName</th>
+	<th>LastName</th>
+	<th>Address</th>
+	<th>Address2</th>
+	<th>Phone#</th>
+	<th>district</th>
+	<th>city</th>
+	<th>Film Title</th>
+	<th>RentalDate</th>
+	<th>ReturnDate</th>
+</tr>
+{% for item in data %}
+<tr>
+	<td>{{item[0]}}</td>
+	<td>{{item[1]}}</td>
+	<td>{{item[2]}}</td>
+	<td>{{item[3]}}</td>
+	<td>{{item[4]}}</td>
+	<td>{{item[5]}}</td>
+	<td>{{item[6]}}</td>
+	<td>{{item[7]}}</td>
+	<td>{{item[8]}}</td>
+	<td>{{item[9]}}</td>
+	<td>{{item[10]}}</td>
+	<td>{{item[11]}}</td>
+	<td>{{item[12]}}</td>
+</tr>
+{% endfor %}
+</table>

@@ -1,0 +1,71 @@
+<!doctype html>
+<head><title>movies</title> 
+<meta charset=utf-8> 
+<button> <a href="/">home</a></button>
+</head>
+
+	<button> <a href="/movies/">Movies</a></button>
+	<button> <a href="/customers/">Customers</a></button>
+	<button> <a href="/reports/">Reports</a></button>
+<br>
+<form action="" method="post">
+	<input type="hidden" name="SOR" value="0">
+	<label for="filmN" class="form-label">Film Name:</label>
+	<input name="filmN" type="text"/>
+	<label for="storeID" class="form-label">Store ID:</label>
+	<select name="storeID">
+		<option value=1>Store 1</option>
+		<option value=2>Store 2</option>
+	</select>
+	<br>
+	<table>
+	<th>Inventory_id of Item in stock</th>
+	{% for item in inStock %}
+		<tr>
+		<td>{{item[0]}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+	<button type="submit">Search</button>
+
+</form>
+<form action="" method="post">
+	<input type="hidden" name="SOR" value="1">
+	<label for="custID" class="form-label">CustomerID:</label>
+	<input name="custID" type="text"/>
+	<label for="invID" class="form-label">Inventory ID:</label>
+	<input name="invID" type="text"/>
+	<br>
+	<button type="submit">Search</button>
+
+</form>
+
+<br>
+<form action="" method="post">
+		<input type="hidden" name="SOR" value="2">
+                <label for="Title" class="form-label">Search by Title</label>
+                <input name="Title" type="text"/>
+   		<label for="Category" class="form-label">Search by Genre</label>
+                <input name="Category" type="text"/>
+                <label for="ActorFN" class="form-label">Search by Actor First Name</label>
+                <input name="ActorFN" type="text"/>
+		<label for="ActorLN" class="form-label">Search by Actor Last Name</label>
+                <input name="ActorLN" type="text"/>
+                <button type="submit">Search</button>
+            </form>
+<table>
+
+{% for item in data %}
+<tr>
+	<td>{{item[0]}}</td>
+	<td>{{item[1]}}</td>
+	<td>{{item[2]}}</td>
+	<td>{{item[3]}}</td>
+	<td>{{item[4]}}</td>
+	<td>{{item[5]}}</td>
+	<td>{{item[6]}}</td>
+	<td>{{item[7]}}</td>
+	<td>{{item[8]}}</td>
+</tr>
+{% endfor %}
+</table>

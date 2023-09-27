@@ -1,0 +1,23 @@
+<!doctype html>
+<head><title>Report</title> 
+<meta charset=utf-8> 
+<table>
+<tr>
+	<th>First name</th>
+	<th>Last name</th>
+	<th>Title</th>
+	<th>inventory ID</th>
+	<th>Rental Date</th>
+	<th>Return Date</th>
+</tr>
+{% for item in data %}
+<tr>
+	<td>{{item[0]}}</td>
+	<td>{{item[1]}}</td>
+	<td>{{item[2]}}</td>
+	<td>{{item[3]}}</td>
+	<td>{{item[4]}}</td>
+	<td>{{item[5]}}</td>
+</tr>
+{% endfor %}
+</table>
