@@ -1,0 +1,52 @@
+<!doctype html>
+<head><title>formADD</title> 
+<meta charset=utf-8> 
+<button> <a href="/">home</a></button>
+</head>
+
+	<button> <a href="/movies/">Movies</a></button>
+	<button> <a href="/customers/">Customers</a></button>
+	<button> <a href="/reports/">Reports</a></button>
+<form action="" method="post">
+	<label for="storeID" class="form-label">Store ID:</label>
+	<select name="storeID">
+		<option value=1>Store 1</option>
+		<option value=2>Store 2</option>
+	</select>
+	<br>
+	<label for="custFN" class="form-label">First Name:</label>
+	<input name="custFN" type="text"/>
+	<br>
+	<label for="custLN" class="form-label">Last Name</label>
+	<input name="custLN" type="text"/>
+	<br>
+	<label for="email" class="form-label">email</label>
+	<input name="email" type="text"/>
+	<br>
+	<label for="address" class="form-label">address</label>
+	<input name="address" type="text"/>
+	<br>
+	<label for="address2" class="form-label">address 2</label>
+	<input name="address2" type="text"/>
+	<br>
+	<label for="district" class="form-label">district</label>
+	<input name="district" type="text"/>
+	<br>
+	<label for="postal" class="form-label">postal code</label>
+	<input name="postal" type="text"/>
+	<br>
+	<label for="city" class="form-label">city</label>
+	<input name="city" type="text"/>
+	<br>
+	<label for="country" class="form-label">country:</label>
+	<select name="country">
+		{% for item in data %}
+		<option value="{{item[0]}}">{{item[0]}}</option>
+		{% endfor %}
+	</select>
+	<br>
+	<label for="phone" class="form-label">phone number</label>
+	<input name="phone" type="text"/>
+	<br>
+	<button type="submit">Create</button>
+</form>

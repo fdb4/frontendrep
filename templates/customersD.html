@@ -18,7 +18,10 @@
                 <button type="submit">Search</button>
             </form>
 </br>
+{{pagination.info}}
+{{pagination.links}}
 <table>
+<thead>
 <tr>
 	<th>CustomerID</th>
 	<th>AddressID</th>
@@ -34,6 +37,10 @@
 	<th>RentalDate</th>
 	<th>ReturnDate</th>
 </tr>
+
+</thead>
+
+<tbody>
 {% for item in data %}
 <tr>
 	<td>{{item[0]}}</td>
@@ -51,4 +58,7 @@
 	<td>{{item[12]}}</td>
 </tr>
 {% endfor %}
+
+</tbody>
 </table>
+{{pagination.links}}

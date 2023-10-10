@@ -108,6 +108,7 @@
 	<br>
 	<button type="submit">Update</button>
 </form>
+{{result}}
 <br>
 <div>DELETE CUSTOMER</div>
 <br>
@@ -121,9 +122,23 @@
 	<input name="cityID3" type="text"/>
 	<br>
 	<button type="submit">Delete</button>
+	{{er}}
 </form>
-<div>LOOKUP CUSTOMER</div>
 <br>
+<div>RETURN A MOVIE</div>
+<br>
+
+<form action="" method="post">
+	<input type="hidden" name="CRUD" value="4">
+	<label for="custID4" class="form-label">CustomerID(required):</label>
+	<input name="custID4" type="text"/>
+	<label for="rentalID" class="form-label">RentalID(required):</label>
+	<input name="rentalID" type="text"/>
+	<br>
+	<button type="submit">Submit</button>
+</form>
+<br>
+<div>LOOKUP CUSTOMER</div>
 <br>
 <form action="" method="post">
 		<input type="hidden" name="CRUD" value="0">
